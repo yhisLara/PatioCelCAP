@@ -1,0 +1,38 @@
+{
+  "name": "PatioCelulosa",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/xsenv": "^4.2.0",
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "hdb": "^0.19.7",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "deploy": "cf deploy mta_archives/PatioCelulosa_1.0.0.mtar -f --delete-services"
+  },
+  "cds": {
+    "requires": {
+      "auth": "xsuaa",
+      "db": "hana-cloud"
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  },
+  "sapux": [
+    "app/descarga"
+  ]
+}
+
